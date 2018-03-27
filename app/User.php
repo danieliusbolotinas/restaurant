@@ -15,7 +15,19 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+      'name',
+      'last_name',
+      'email',
+      'password',
+      'bday',
+      'phone',
+      'address',
+      'city',
+      'zipcode',
+      'country',
+      'updated_at',
+      'created_at',
+      'is_admin',
     ];
 
     /**
@@ -23,7 +35,66 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $hidden = [
+     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo('Role');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
+
+    public function getFullName()
+    {
+        return $this->name . ' ' . $this->last_name;
+    }
+
+
+    public function isAdmin()
+    {
+        return (bool) $this->is_admin;
+    }
+
+
+    public function getRememberToken()
+    {
+        return null; // will not support
+    }
+
+    /**
+     * Set the token value for the "remember me" session.
+     *
+     * @param  string  $value
+     * @return void
+     */
+    public function setRememberToken($value)
+    {
+        // will not support
+    }
+
+    /**
+     * Get the column name for the "remember me" token.
+     *
+     * @return string
+     */
+    public function getRememberTokenName()
+    {
+        return null; // will not support
+    }
+
+    public function setAttribute($key, $value)
+    {
+        $isRememberTokenAttribute = $key == $this->getRememberTokenName();
+
+        if( ! $isRememberTokenAttribute )
+        {
+            parent::setAttribute($key, $value);
+        }
+    }
+
 }
