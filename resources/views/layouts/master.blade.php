@@ -94,7 +94,7 @@
             <div class="row full">
 
                 <div class="col-lg-12 col-md-5 footer-pad">
-                    <p class="copyright gray"><span class="hidden-xs">&copy; 2016 3W Academy | Andrius Busilas</span></p>
+                    <p class="copyright gray"><span class="hidden-xs">&copy; 2018 3W Academy | Danielius</span></p>
                 </div>
 
             </div>

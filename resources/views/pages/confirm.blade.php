@@ -31,7 +31,7 @@
 
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <p>At Prazit, we encourage you to make reservations up to 30 days in advance. <span class="s1">For cancellations or changes to your reservation we ask for a courtesy call no later than noon the day of your reservation.</span></p>
+        <p><span class="s1">For cancellations or changes to your reservation we ask for a courtesy call no later than noon the day of your reservation.</span></p>
         <br>
       </div>
     </div>

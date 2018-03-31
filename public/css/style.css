@@ -482,7 +482,7 @@ Home Styles
 .logo-main {
   width: 630px;
   height: 193.5531914893617px;
-  background-image: url(images/parazit-logo.png);
+  background-image: url(images/restaurant-logo.png);
   background-repeat: no-repeat;
 }
 
@@ -569,6 +569,23 @@ Menu styles
   float: left;
   padding: 20px;
   position: relative;
+}
+
+.dish_pic{
+  max-width: 300px;
+  max-height: 300px;
+  vertical-align: inherit;
+}
+
+.hover_description{
+  position:relative;
+  bottom:30px;
+  left:0px;
+  visibility:hidden;
+}
+
+#appear:hover .hover_description {
+visibility:visible;
 }
 
 .menu-restaurant span.clearfix {
