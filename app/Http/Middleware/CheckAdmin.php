@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckAdmin
 {
-  public function handle($request, Closure $next, $guard = null)
-  {
-    if (Auth::guard($guard)->guest()) {
-      if ($request->ajax()) {
-        return response('Unauthorized.', 401);
-      } else {
-        return redirect()->guest('login');
-      }
-    } else if (!Auth::guard($guard)->user()->is_admin) {
-      return redirect()->to('/')->withError('Permission Denied');
+public function handle($request, Closure $next, $guard = null)
+{
+  if (Auth::guard($guard)->guest()) {
+    if ($request->ajax()) {
+      return response('Unauthorized.', 401);
+    } else {
+      return redirect()->guest('login');
     }
-
-    return $next($request);
+  } else if (!Auth::guard($guard)->user()->is_admin) {
+    return redirect()->to('/')->withError('Permission Denied');
   }
+
+  return $next($request);
+}
 }

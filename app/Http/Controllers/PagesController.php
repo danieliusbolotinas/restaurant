@@ -14,41 +14,41 @@ use Session;
 
 class PagesController extends Controller
 {
-    public function getIndex()
-    {
-    	return view('pages.index');
-    }
+  public function getIndex()
+  {
+  	return view('pages.index');
+  }
 
-    public function getMenu()
-    {
-        $categories = Category::with('products')->get();
-        $products = Product::get();
-        return view('pages.menu',['products' => $products, 'categories' => $categories]);
-    }
+  public function getMenu()
+  {
+      $categories = Category::with('products')->get();
+      $products = Product::get();
+      return view('pages.menu',['products' => $products, 'categories' => $categories]);
+  }
 
-    public function getReservation()
-    {
-    	return view('pages.reservation');
-    }
+  public function getReservation()
+  {
+  	return view('pages.reservation');
+  }
 
-    public function getContact()
-    {
-    	return view('pages.contact');
-    }
+  public function getContact()
+  {
+  	return view('pages.contact');
+  }
 
-    public function getConfirm()
-    {
-        return view('pages.confirm');
-    }
+  public function getConfirm()
+  {
+      return view('pages.confirm');
+  }
 
-    public function getCart()
-    {
-        if (!Session::has('cart')) {
-            return view('pages.cart');
-        }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-    	return view('pages.cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
-    }
+  public function getCart()
+  {
+      if (!Session::has('cart')) {
+          return view('pages.cart');
+      }
+      $oldCart = Session::get('cart');
+      $cart = new Cart($oldCart);
+  	return view('pages.cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+  }
 
 }

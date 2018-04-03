@@ -6,27 +6,27 @@ use Illuminate\Database\Migrations\Migration;
 
 class ReservationTableDateType extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-      Schema::table('reservations', function (Blueprint $table) {
-          $table->date('reservation_start')->change();
-        });
-    }
+  /**
+  * Run the migrations.
+  *
+  * @return void
+  */
+  public function up()
+  {
+    Schema::table('reservations', function (Blueprint $table) {
+      $table->date('reservation_start')->change();
+    });
+  }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-      Schema::table('reservations', function (Blueprint $table) {
-          $table->dropColumn('reservation_start');
-        });
-    }
+  /**
+  * Reverse the migrations.
+  *
+  * @return void
+  */
+  public function down()
+  {
+    Schema::table('reservations', function (Blueprint $table) {
+      $table->dropColumn('reservation_start');
+    });
+  }
 }

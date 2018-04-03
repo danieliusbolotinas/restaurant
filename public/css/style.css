@@ -137,16 +137,19 @@ hr {
   border-color: #bfbfbf;
   color: #ffffff;
 }
-.btn-primary.focus, .btn-primary:focus {
+.bt
+n-primary.focus, .btn-primary:focus {
   background-color: transparent;
   border-color: #bfbfbf;
   color: #ffffff;
 }
+
 .btn-primary:hover {
   background-color: #bfbfbf;
   border-color: #bfbfbf;
   color: #201d21;
 }
+
 .btn-primary.active, .btn-primary:active, .open > .dropdown-toggle.btn-primary {
   background-color: #ffb636;
   border-color: transparent;
@@ -368,43 +371,43 @@ Main Styles
 }
 
 /*---------------Video ------------------*/
-.fullscreen-bg {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: -100;
+/* .fullscreen-bg {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+overflow: hidden;
+z-index: -100;
 }
 
 .fullscreen-bg__video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
 }
 
 @media (min-aspect-ratio: 16/9) {
-  .fullscreen-bg__video {
-    height: 300%;
-    top: -100%;
-  }
+.fullscreen-bg__video {
+height: 300%;
+top: -100%;
+}
 }
 
 @media (max-aspect-ratio: 16/9) {
-  .fullscreen-bg__video {
-    width: 300%;
-    left: -100%;
-  }
+.fullscreen-bg__video {
+width: 300%;
+left: -100%;
+}
 }
 
 @media (max-width: 767px) {
-  .fullscreen-bg {
-    background: url('images/poster.png') center center / cover no-repeat;
-  }
+.fullscreen-bg {
+background: url('images/poster.png') center center / cover no-repeat;
 }
+} */
 
 /* ==========================================================================
 Navigations Styles
@@ -487,12 +490,12 @@ Home Styles
 }
 
 /*------------------Small Logo-----------------*/
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-}
+/* .center-block {
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 10px;
+} */
 
 /* ==========================================================================
 Form Styles
@@ -585,7 +588,7 @@ Menu styles
 }
 
 #appear:hover .hover_description {
-visibility:visible;
+  visibility:visible;
 }
 
 .menu-restaurant span.clearfix {

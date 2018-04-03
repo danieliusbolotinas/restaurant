@@ -3,151 +3,151 @@
 @section('New Product', 'Page Title')
 
 @section('sidebar')
-    @parent
+@parent
 @endsection
 
 @section('content')
-    <div class="container">
-    <div class="row">
+<div class="container">
+  <div class="row">
     <div class="panel panel-info">
-        <div class="panel-heading">
-            <div class="panel-title">Update User</div>
-        </div>
-        <div class="panel-body" >
-            <form method="POST" action="/admin/user/update/{{$user->id}}"  class="form-horizontal" enctype="multipart/form-data" role="form">
+      <div class="panel-heading">
+        <div class="panel-title">Update User</div>
+      </div>
+      <div class="panel-body" >
+        <form method="POST" action="/admin/user/update/{{$user->id}}"  class="form-horizontal" enctype="multipart/form-data" role="form">
 
-                {!! csrf_field() !!}
-                <fieldset>
-                    <!-- Text input-->
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label"> First Name</label>
+          {!! csrf_field() !!}
+          <fieldset>
+            <!-- Text input-->
+            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+              <label for="name" class="col-md-4 control-label"> First Name</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ $user->name or '' }}" required autofocus>
+              <div class="col-md-6">
+                <input id="name" type="text" class="form-control" name="name" value="{{ $user->name or '' }}" required autofocus>
 
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                @if ($errors->has('name'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('name') }}</strong>
+                </span>
+                @endif
+              </div>
+            </div>
 
-                        <div class="form-group">
-                            <label for="last_name" class="col-md-4 control-label">Last Name</label>
+            <div class="form-group">
+              <label for="last_name" class="col-md-4 control-label">Last Name</label>
 
-                            <div class="col-md-6">
-                                <input id="last_name" type="last_name" class="form-control" name="last_name" value="{{ $user->last_name or '' }}" required>
-                            </div>
-                        </div>
+              <div class="col-md-6">
+                <input id="last_name" type="last_name" class="form-control" name="last_name" value="{{ $user->last_name or '' }}" required>
+              </div>
+            </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+              <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $user->email or '' }}" required>
+              <div class="col-md-6">
+                <input id="email" type="email" class="form-control" name="email" value="{{ $user->email or '' }}" required>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                @if ($errors->has('email'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('email') }}</strong>
+                </span>
+                @endif
+              </div>
+            </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+              <label for="password" class="col-md-4 control-label">Password</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+              <div class="col-md-6">
+                <input id="password" type="password" class="form-control" name="password" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                @if ($errors->has('password'))
+                <span class="help-block">
+                  <strong>{{ $errors->first('password') }}</strong>
+                </span>
+                @endif
+              </div>
+            </div>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+            <div class="form-group">
+              <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="bday" class="col-md-4 control-label">Your Birth Day</label>
-
-                            <div class="col-md-6">
-                                <input id="bday" type="bday" class="form-control" name="bday" value="{{ $user->bday or '' }}" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone" class="col-md-4 control-label">Phone Number</label>
-
-                            <div class="col-md-6">
-                                <input id="phone" type="phone" class="form-control" name="phone" value="{{ $user->phone or '' }}" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="address" class="col-md-4 control-label">Street</label>
-
-                            <div class="col-md-6">
-                                <input id="address" type="address" class="form-control" name="address" value="{{ $user->address or '' }}" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="city" class="col-md-4 control-label">City</label>
-
-                            <div class="col-md-6">
-                                <input id="city" type="city" class="form-control" name="city" value="{{ $user->city or '' }}" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="zipcode" class="col-md-4 control-label">ZIP Code</label>
-
-                            <div class="col-md-6">
-                                <input id="zipcode" type="zipcode" class="form-control" name="zipcode" value="{{ $user->zipcode or '' }}" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="country" class="col-md-4 control-label">Country</label>
-
-                            <div class="col-md-6">
-                                <input id="country" type="country" class="form-control" name="country" value="{{ $user->country or '' }}" required>
-                            </div>
-                        </div>
+              <div class="col-md-6">
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+              </div>
+            </div>
 
 
-                        <div class="form-group">
-                            <label for="is_admin" class="col-md-4 control-label">Role</label>
+            <div class="form-group">
+              <label for="bday" class="col-md-4 control-label">Your Birth Day</label>
 
-                            <div class="col-md-6">
-                                <input id="is_admin" type="is_admin" class="form-control" name="is_admin" value="{{ $user->is_admin or '' }}" required>
-                            </div>
-                        </div>
+              <div class="col-md-6">
+                <input id="bday" type="bday" class="form-control" name="bday" value="{{ $user->bday or '' }}" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="col-md-4 control-label">Phone Number</label>
+
+              <div class="col-md-6">
+                <input id="phone" type="phone" class="form-control" name="phone" value="{{ $user->phone or '' }}" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address" class="col-md-4 control-label">Street</label>
+
+              <div class="col-md-6">
+                <input id="address" type="address" class="form-control" name="address" value="{{ $user->address or '' }}" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="city" class="col-md-4 control-label">City</label>
+
+              <div class="col-md-6">
+                <input id="city" type="city" class="form-control" name="city" value="{{ $user->city or '' }}" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="zipcode" class="col-md-4 control-label">ZIP Code</label>
+
+              <div class="col-md-6">
+                <input id="zipcode" type="zipcode" class="form-control" name="zipcode" value="{{ $user->zipcode or '' }}" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="country" class="col-md-4 control-label">Country</label>
+
+              <div class="col-md-6">
+                <input id="country" type="country" class="form-control" name="country" value="{{ $user->country or '' }}" required>
+              </div>
+            </div>
 
 
-                        <div class="form-group">
-                        <label class="col-md-3 control-label" for="submit"></label>
-                        <div class="col-md-9">
-                            <button id="submit" name="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </div>
+            <div class="form-group">
+              <label for="is_admin" class="col-md-4 control-label">Role</label>
 
-                </fieldset>
+              <div class="col-md-6">
+                <input id="is_admin" type="is_admin" class="form-control" name="is_admin" value="{{ $user->is_admin or '' }}" required>
+              </div>
+            </div>
 
-            </form>
-        </div>
+
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="submit"></label>
+              <div class="col-md-9">
+                <button id="submit" name="submit" class="btn btn-primary">Update</button>
+              </div>
+            </div>
+
+          </fieldset>
+
+        </form>
+      </div>
     </div>
-    </div>
-    </div>
+  </div>
+</div>
 @endsection
