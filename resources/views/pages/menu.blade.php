@@ -12,9 +12,9 @@
 
 <section class="top-section margin-10">
   <div class="container">
-      <div class="row">
+      <!-- <div class="row">
           <a href="{{ url('/') }}"><img class="center-block"  src="images/nav-logo.png"/></a>
-      </div>
+      </div> -->
 
   <div class="row margin-20">
     <div class="col-sm-12">
