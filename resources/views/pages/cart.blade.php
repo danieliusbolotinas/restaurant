@@ -88,7 +88,7 @@
 							<td>   </td>
 							<td>
 								<a href="/menu"> <button type="button" class="btn btn-lg btn-primary">
-									<span class="fa fa-shopping-cart"></span> ordering
+									<span class="fa fa-shopping-cart"></span> keep ordering
 								</button>
 							</a></td>
 							<td>
